@@ -28,15 +28,37 @@ grails.project.dependency.resolution = {
         // specify dependencies here under either 'build', 'compile', 'runtime', 'test' or 'provided' scopes eg.
         runtime 'rhino:js:1.7R2'
         runtime 'com.asual.lesscss:lesscss-engine:1.1.4'
-        test "org.codehaus.geb:geb-spock:0.6.2"
-        test ('org.gmock:gmock:0.8.0') {
+
+        test("org.codehaus.geb:geb-spock:0.6.2") {
+            export = false
+        }
+        test ('org.gmock:gmock:0.8.2') {
             export = false
         }
 
-        test("org.seleniumhq.selenium:selenium-firefox-driver:2.14.0") {
-            exclude 'selenium-server'
+        test("org.seleniumhq.selenium:selenium-firefox-driver:2.16.1") {
             export = false
         }
-        // runtime 'mysql:mysql-connector-java:5.1.13'
+
+        provided("org.codehaus.groovy.modules.http-builder:http-builder:0.5.2"){
+            export = false
+            excludes 'nekohtml', "httpclient", "httpcore","xml-apis","groovy"
+        }
+        provided('net.sourceforge.nekohtml:nekohtml:1.9.15') {
+            export = false
+            excludes "xml-apis"
+        }
+    }
+
+    plugins {
+        build ":tomcat:${grailsVersion}"
+        compile(":resources:1.1.6") { export = false }
+        build(":release:1.0.1") {
+            excludes 'http-builder', 'nekohtml', 'svn'
+            export = false
+        }
+
+        test ":geb:0.6.2", ":spock:0.6-SNAPSHOT"
+        build(":svn:1.0.2") { export = false }
     }
 }
