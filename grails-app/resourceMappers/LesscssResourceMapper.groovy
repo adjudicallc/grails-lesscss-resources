@@ -11,7 +11,7 @@ import org.grails.plugin.resource.mapper.MapperPhase
 class LesscssResourceMapper {
 
     def grailsApplication
-    def resourceService
+    def grailsResourceProcessor
 
     def phase = MapperPhase.GENERATION // need to run early so that we don't miss out on all the good stuff
     def operation = "compile"
@@ -68,6 +68,6 @@ class LesscssResourceMapper {
     }
 
     private URL getOriginalResourceURLForURI(String sourceUri) {
-        resourceService.getOriginalResourceURLForURI(sourceUri);
+        grailsResourceProcessor.getOriginalResourceURLForURI(sourceUri);
     }
 }

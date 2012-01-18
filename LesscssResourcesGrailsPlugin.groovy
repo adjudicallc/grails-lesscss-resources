@@ -1,4 +1,4 @@
-import org.grails.plugin.resource.ResourceService
+import org.grails.plugin.resource.ResourceProcessor
 import org.grails.plugin.resource.ResourceTagLib
 
 class LesscssResourcesGrailsPlugin {
@@ -27,7 +27,7 @@ This plugin supports server-side compilation of .less CSS files to their .css co
 
     def doWithSpring = { ->
         // monkey-patch ResourceService and ResourceTagLib to support .less files
-        ResourceService.DEFAULT_MODULE_SETTINGS['less'] = [
+        ResourceProcessor.DEFAULT_MODULE_SETTINGS['less'] = [
             disposition: 'head' 
         ]
         ResourceTagLib.SUPPORTED_TYPES['less'] = [
