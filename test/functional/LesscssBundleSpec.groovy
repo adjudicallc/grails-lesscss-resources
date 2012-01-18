@@ -1,10 +1,10 @@
-import geb.spock.GebSpec
+import geb.spock.GebReportingSpec
 /**
  * @author Paul Fairless
  *
  */
 
-class LesscssBundleSpec extends GebSpec {
+class LesscssBundleSpec extends GebReportingSpec {
     def setupSpec() {
 //        browser.getDriver().setJavascriptEnabled(true)
     }

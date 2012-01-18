@@ -28,12 +28,12 @@ grails.project.dependency.resolution = {
         // specify dependencies here under either 'build', 'compile', 'runtime', 'test' or 'provided' scopes eg.
         runtime 'rhino:js:1.7R2'
         runtime 'com.asual.lesscss:lesscss-engine:1.1.4'
-        test "org.codehaus.geb:geb-spock:0.6.0"
+        test "org.codehaus.geb:geb-spock:0.6.2"
         test ('org.gmock:gmock:0.8.0') {
             export = false
         }
 
-        test("org.seleniumhq.selenium:selenium-firefox-driver:2.5.0") {
+        test("org.seleniumhq.selenium:selenium-firefox-driver:2.14.0") {
             exclude 'selenium-server'
             export = false
         }

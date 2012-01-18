@@ -31,3 +31,5 @@ grails.resources.modules = {
         resource url:'less/test.less',attrs:[rel: "stylesheet/less", type:'css'], bundle:'bundle_less'
     }
 }
+grails.views.default.codec="none" // none, html, base64
+grails.views.gsp.encoding="UTF-8"
