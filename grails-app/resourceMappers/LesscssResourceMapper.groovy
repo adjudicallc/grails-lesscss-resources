@@ -17,7 +17,7 @@ class LesscssResourceMapper {
     def operation = "compile"
 
     static defaultExcludes = ['**/*.js','**/*.png','**/*.gif','**/*.jpg','**/*.jpeg','**/*.gz','**/*.zip']
-    static defaultIncludes = ['**/*.less']                                                                                                    
+    static defaultIncludes = ['**/*.less']
     static String LESS_FILE_EXTENSION = '.less'
 
     def map(resource, config){
@@ -29,9 +29,9 @@ class LesscssResourceMapper {
             URL input = getOriginalResourceURLForURI(resource.sourceUrl)
             target = new File(generateCompiledFileFromOriginal(originalFile.absolutePath))
 
-            // save current context classloader and set the classloader from the 
-            // Grails application, otherwise we have trouble accessing the original 
-            // resources when reloading 
+            // save current context classloader and set the classloader from the
+            // Grails application, otherwise we have trouble accessing the original
+            // resources when reloading
             def thread = Thread.currentThread()
             def saveCL = thread.contextClassLoader
             thread.contextClassLoader = grailsApplication.classLoader
@@ -41,12 +41,12 @@ class LesscssResourceMapper {
             }
             try {
                 target.text = engine.compile(input)
-                
+
                 // Update mapping entry
                 // We need to reference the new css file from now on
                 resource.processedFile = target
                 resource.updateActualUrlFromProcessedFile()
-                
+
                 // Change the source extension so the compiled CSS gets into the
                 // .css bundle, not a separate .less bundle
                 resource.sourceUrlExtension = 'css'

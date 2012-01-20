@@ -28,12 +28,12 @@ This plugin supports server-side compilation of .less CSS files to their .css co
     def doWithSpring = { ->
         // monkey-patch ResourceService and ResourceTagLib to support .less files
         ResourceProcessor.DEFAULT_MODULE_SETTINGS['less'] = [
-            disposition: 'head' 
+            disposition: 'head'
         ]
         ResourceTagLib.SUPPORTED_TYPES['less'] = [
-            type: "text/css", 
-            rel: 'stylesheet/less', 
-            media: 'screen, projection' 
+            type: "text/css",
+            rel: 'stylesheet/less',
+            media: 'screen, projection'
         ]
     }
 }
