@@ -50,6 +50,7 @@ class LesscssResourceMapper {
                 // Change the source extension so the compiled CSS gets into the
                 // .css bundle, not a separate .less bundle
                 resource.sourceUrlExtension = 'css'
+                resource.contentType = 'text/css'
                 // fixup the rel attribute
                 resource.tagAttributes.rel = 'stylesheet'
 

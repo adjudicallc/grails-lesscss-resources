@@ -29,9 +29,11 @@ log4j = {
 grails.resources.modules = {
 
     'less' {
+        defaultBundle 'core'
 //        resource url:'less/test_import.less',attrs:[rel: "stylesheet/less", type:'css'], bundle:'bundle_less'
 //        resource url:'less/test_import2.less',attrs:[rel: "stylesheet/less", type:'css'], bundle:'bundle_less'
-        resource url:'less/test.less',attrs:[rel: "stylesheet/less", type:'css'], bundle:'bundle_less'
+        resource url:'css/foo.css'
+        resource url:'less/test.less',attrs:[rel: "stylesheet/less", type:'css'], bundle:'core'
     }
 }
 grails.views.default.codec="none" // none, html, base64

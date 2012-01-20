@@ -17,4 +17,12 @@ class LesscssBundleSpec extends GebReportingSpec {
         $('h2').jquery.css('color') == 'rgb(132, 34, 16)'
         $('h3').jquery.css('color') == 'rgb(34, 251, 34)'
     }
+
+    def "ensure that less files are bundled"() {
+    when:
+        go('')
+    then:
+        $('link').size() == 1
+        $('link').@href =~ /core/
+    }
 }
