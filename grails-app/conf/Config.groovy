@@ -21,6 +21,9 @@ log4j = {
            'net.sf.ehcache.hibernate'
 
     warn   'org.mortbay.log'
+
+    //trace 'com.asual'
+    //debug 'grails.app.resourceMappers', 'org.grails.plugin.resource'
 }
 
 grails.resources.modules = {
