@@ -26,8 +26,7 @@ grails.project.dependency.resolution = {
     }
     dependencies {
         // specify dependencies here under either 'build', 'compile', 'runtime', 'test' or 'provided' scopes eg.
-        runtime 'rhino:js:1.7R2'
-        runtime 'com.asual.lesscss:lesscss-engine:1.1.4'
+        compile 'com.asual.lesscss:lesscss-engine:1.1.5'
 
         test("org.codehaus.geb:geb-spock:0.6.2") {
             export = false
